@@ -1,5 +1,4 @@
 import React from 'react'
-require ("../samples/kick-deep.wav")
 
 const Player = React.createClass({  
   componentDidMount: function(){
