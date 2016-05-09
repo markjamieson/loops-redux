@@ -1,21 +1,14 @@
 {
-  "name": "redux-todos-example",
+  "name": "loops-redux",
   "version": "0.0.0",
-  "description": "Redux Todos example",
+  "description": "Drum loops in React/Redux",
   "scripts": {
-    "start": "node server.js",
-    "test": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register --require ./test/setup.js",
-    "test:watch": "npm test -- --watch"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/reactjs/redux.git"
+    "url": "https://github.com/markjamieson/loops-redux"
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/reactjs/redux/issues"
-  },
-  "homepage": "http://redux.js.org",
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "bootstrap-loader": "^1.0.10",
