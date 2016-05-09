@@ -1,5 +1,5 @@
 const initialState = {
-  isPlaying: false,
+  isPlaying: true,
   volume: 100
 }
 

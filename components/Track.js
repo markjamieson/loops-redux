@@ -4,11 +4,10 @@ const renderNotes = (measure, notes, timeSignature, onNoteClick) => {
   let result = [];
   for (let i=0; i<timeSignature[0]; i++){
     let noteIndex = measure*timeSignature[0] + i;
-    let style = {
-      backgroundColor: notes[noteIndex] === 0?'red':'green'
-    }
+    let className = "Composition--Track--Note btn "
+    className += notes[noteIndex] === 0?'btn-danger':'btn-success'
     result.push(
-      <button style={style} className="Composition--Track--Note" key={i} onClick={() => onNoteClick(noteIndex)} />
+      <button className={className} key={i} onClick={() => onNoteClick(noteIndex)} />
     )
   }
   return result

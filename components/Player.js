@@ -3,9 +3,21 @@ import React from 'react'
 const Player = React.createClass({  
   componentDidMount: function(){
     this.currentNote = 0;
-    window.setInterval(this.playNextNote, 200);
+    if (this.props.isPlaying){
+      this.play();
+    }
   },
-  playNextNote: function(){
+  play: function(){
+    this.interval = window.setInterval(this.advance, 1000*60/this.props.tempo);
+  },
+  pause: function(){
+    window.clearInterval(this.interval);
+  },
+  stop: function(){
+    this.pause();
+    this.currentNote = 0;
+  },
+  advance: function(){
     this.props.tracks.forEach((track) => {
       if (track.notes[this.currentNote] === 1){
         let ref = this.refs['track' + track.id];
@@ -15,7 +27,7 @@ const Player = React.createClass({
       }
     });
     this.currentNote += 1;
-    if (this.currentNote === this.props.tracks[0].notes.length){
+    if (this.currentNote === this.props.numNotes){
       this.currentNote = 0;
     }
   },
@@ -29,7 +41,6 @@ const Player = React.createClass({
             </audio>
           )
         })}
-        
       </div>
     )
   }

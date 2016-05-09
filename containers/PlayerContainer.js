@@ -3,7 +3,10 @@ import Player from '../components/Player'
 
 const mapStateToProps = (state) => {
   return {
-    tracks: state.composition.tracks
+    tracks: state.composition.tracks,
+    tempo: state.composition.tempo,
+    numNotes: state.composition.numMeasures * state.composition.timeSignature[0],
+    isPlaying: state.player.isPlaying
   }
 }
 
